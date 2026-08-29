@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  html,body{margin:0;padding:0;background:#0a0a0a}
+  *{box-sizing:border-box}
+  a{color:#e8e6e3;text-decoration:none}
+  a:hover{color:#ffffff}
+  ::selection{background:#c8ccd0;color:#0a0a0a}
+  @keyframes briRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @keyframes briFade{from{opacity:0}to{opacity:1}}
+  @keyframes briPole{from{background-position:0 0}to{background-position:0 -64px}}
+  html{scroll-behavior:smooth}
+</style>
+</helmet>
+<div style="background:#0a0a0a;color:#eceae7;font-family:Barlow,system-ui,sans-serif;min-height:100vh;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)">
+    <div style="display:flex;align-items:center;gap:10px">
+      <img src="uploads/pasted-1787672577706-0.png" alt="Barber Shop Brica logo" style="width:40px;height:40px;object-fit:cover;border-radius:50%;border:1px solid rgba(255,255,255,.14)">
+      <div style="line-height:.9">
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.14em">BRICA</div>
+        <div style="font-size:8.5px;letter-spacing:.34em;color:#8d9298;text-transform:uppercase">Barber Shop</div>
+      </div>
+    </div>
+    <nav style="display:flex;align-items:center;gap:22px">
+      <a href="#usluge" style="font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#a8a5a1" style-hover="color:#fff">Usluge</a>
+      <a href="#kontakt" style="font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#a8a5a1" style-hover="color:#fff">Kontakt</a>
+      <a href="#zakazivanje" style="font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:#0a0a0a;background:#e9e7e4;padding:10px 18px;border-radius:2px;font-weight:600" style-hover="background:#fff">Zakaži</a>
+    </nav>
+  </header>
+
+  <section style="position:relative;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:96px 24px 104px;min-height:78vh;border-bottom:1px solid rgba(255,255,255,.08);background:radial-gradient(120% 90% at 50% 0%,#1b1b1c 0%,#0a0a0a 62%)">
+    <div style="position:absolute;inset:0;opacity:.05;background:repeating-linear-gradient(90deg,#fff 0 1px,transparent 1px 46px);pointer-events:none"></div>
+    <div style="position:relative;animation:briRise .8s cubic-bezier(.2,.7,.3,1) both">
+      <img src="uploads/pasted-1787672577706-0.png" alt="Barber Shop Brica logo" style="width:min(260px,58vw);height:auto;display:block;margin:0 auto 26px;border-radius:50%;box-shadow:0 0 60px rgba(201,204,208,.12)">
+      <div style="font-size:11px;letter-spacing:.42em;text-transform:uppercase;color:#8d9298;margin-bottom:22px">Veliki Crljeni &nbsp;·&nbsp; Est. tradicija</div>
+      <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(58px,13vw,150px);line-height:.86;margin:0;letter-spacing:.02em;background:linear-gradient(180deg,#ffffff 0%,#c9ccd0 55%,#7d8288 100%);-webkit-background-clip:text;background-clip:text;color:transparent">BARBER SHOP<br><span style="background:linear-gradient(100deg,#c8102e 0%,#c8102e 26%,#ffffff 42%,#ffffff 58%,#0a3d91 74%,#0a3d91 100%);-webkit-background-clip:text;background-clip:text;color:transparent">BRICA</span></h1>
+      <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0 0">
+        <div style="height:1px;width:54px;background:linear-gradient(90deg,transparent,#6d7278)"></div>
+        <div style="font-size:12.5px;letter-spacing:.3em;text-transform:uppercase;color:#b6b3af">Vasić Nenad</div>
+        <div style="height:1px;width:54px;background:linear-gradient(90deg,#6d7278,transparent)"></div>
+      </div>
+      <p style="max-width:520px;margin:26px auto 0;font-size:16.5px;line-height:1.65;color:#9d9a96;text-wrap:pretty">{{ heroTagline }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:38px">
+        <a href="#zakazivanje" style="padding:16px 34px;background:#e9e7e4;color:#0a0a0a;font-weight:700;font-size:13px;letter-spacing:.2em;text-transform:uppercase;border-radius:2px" style-hover="background:#fff;transform:translateY(-2px)">Zakaži termin</a>
+        <a href="tel:063462270" style="padding:16px 34px;border:1px solid rgba(255,255,255,.2);color:#e9e7e4;font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;border-radius:2px" style-hover="border-color:#e9e7e4;background:rgba(255,255,255,.05)">063 462 270</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="usluge" style="padding:88px 24px 96px;max-width:1120px;margin:0 auto">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:38px">
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,54px);margin:0;letter-spacing:.06em">Usluge i cene</h2>
+      <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#7f8489">Klikni uslugu da je dodaš u termin</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(258px,1fr));gap:16px">
+      <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+        <div onClick="{{ s.toggle }}" style="cursor:pointer;position:relative;padding:26px 24px 24px;background:#111112;border:1px solid rgba(255,255,255,.09);border-radius:3px;transition:transform .18s ease,border-color .18s ease,background .18s ease" style-hover="transform:translateY(-4px);border-color:rgba(255,255,255,.3);background:#161618">
+          <div style="position:absolute;top:0;left:0;height:2px;background:linear-gradient(90deg,#e9e7e4,#7d8288);transition:width .28s ease;width:{{ s.barWidth }}"></div>
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:14px">
+            <div>
+              <div style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489;margin-bottom:9px">{{ s.tag }}</div>
+              <div style="font-family:'Bebas Neue',sans-serif;font-size:27px;letter-spacing:.05em;line-height:1.05">{{ s.name }}</div>
+            </div>
+            <div style="width:24px;height:24px;flex:none;border-radius:50%;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:13px;color:#0a0a0a;background:{{ s.dotBg }}">{{ s.dot }}</div>
+          </div>
+          <div style="margin-top:20px;padding-top:16px;border-top:1px dashed rgba(255,255,255,.12);display:flex;align-items:baseline;gap:6px">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.03em;color:#fff">{{ s.priceFmt }}</span>
+            <span style="font-size:11.5px;letter-spacing:.2em;color:#7f8489">RSD</span>
+          </div>
+          <div style="margin-top:8px;font-size:13px;line-height:1.5;color:#8d8a86">{{ s.desc }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="zakazivanje" style="padding:20px 24px 96px;max-width:920px;margin:0 auto">
+    <div style="background:#0e0e0f;border:1px solid rgba(255,255,255,.1);border-radius:4px;overflow:hidden">
+      <div style="padding:26px 28px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px">
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:34px;margin:0;letter-spacing:.06em">Zakazivanje termina</h2>
+        <div style="display:flex;align-items:center;gap:6px">
+          <sc-for list="{{ stepDots }}" as="d" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:6px">
+              <div style="width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;border:1px solid rgba(255,255,255,.2);background:{{ d.bg }};color:{{ d.fg }}">{{ d.n }}</div>
+              <div style="width:16px;height:1px;background:rgba(255,255,255,.16);display:{{ d.lineDisplay }}"></div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="padding:30px 28px 34px">
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <div style="animation:briFade .35s ease both">
+            <div style="font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489;margin-bottom:18px">Korak 1 — Izaberi usluge</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ services }}" as="s" hint-placeholder-count="5">
+                <div onClick="{{ s.toggle }}" style="cursor:pointer;display:flex;align-items:center;gap:14px;padding:16px 18px;border:1px solid rgba(255,255,255,.1);border-radius:3px;background:{{ s.rowBg }};transition:background .18s ease" style-hover="border-color:rgba(255,255,255,.28)">
+                  <div style="width:20px;height:20px;flex:none;border-radius:2px;border:1px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center;font-size:12px;color:#0a0a0a;background:{{ s.dotBg }}">{{ s.dot }}</div>
+                  <div style="flex:1;font-size:15.5px;font-weight:500">{{ s.name }}</div>
+                  <div style="font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:.04em;color:#c9ccd0">{{ s.priceFmt }} <span style="font-size:11px;font-family:Barlow,sans-serif;letter-spacing:.16em;color:#7f8489">RSD</span></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:briFade .35s ease both">
+            <div style="font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489;margin-bottom:18px">Korak 2 — Datum i vreme</div>
+            <div style="display:flex;gap:10px;overflow-x:auto;padding-bottom:12px">
+              <sc-for list="{{ days }}" as="d" hint-placeholder-count="7">
+                <div onClick="{{ d.pick }}" style="cursor:{{ d.cursor }};flex:none;width:78px;padding:14px 8px;text-align:center;border:1px solid {{ d.border }};border-radius:3px;background:{{ d.bg }};color:{{ d.fg }};opacity:{{ d.opacity }};transition:all .18s ease">
+                  <div style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase">{{ d.dow }}</div>
+                  <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;line-height:1.1;margin-top:4px">{{ d.day }}</div>
+                  <div style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;opacity:.7">{{ d.mon }}</div>
+                </div>
+              </sc-for>
+            </div>
+            <div style="margin:22px 0 12px;font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489">Slobodni termini — {{ selectedDayLabel }}</div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:9px">
+              <sc-for list="{{ slots }}" as="t" hint-placeholder-count="18">
+                <div onClick="{{ t.pick }}" style="cursor:{{ t.cursor }};text-align:center;padding:12px 6px;font-size:14px;font-weight:600;letter-spacing:.06em;border:1px solid {{ t.border }};border-radius:2px;background:{{ t.bg }};color:{{ t.fg }};text-decoration:{{ t.strike }};transition:all .16s ease">{{ t.label }}</div>
+              </sc-for>
+            </div>
+            <div style="margin-top:14px;font-size:12.5px;color:#7f8489">{{ slotsNote }}</div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:briFade .35s ease both;max-width:520px">
+            <div style="font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489;margin-bottom:18px">Korak 3 — Tvoji podaci</div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <label style="display:flex;flex-direction:column;gap:7px">
+                <span style="font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#8d8a86">Ime</span>
+                <input value="{{ firstName }}" onChange="{{ onFirstName }}" placeholder="Npr. Marko" style="padding:14px 16px;background:#141416;border:1px solid rgba(255,255,255,.14);border-radius:2px;color:#eceae7;font-family:Barlow,sans-serif;font-size:15.5px;outline:none" style-focus="border-color:#c9ccd0">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:7px">
+                <span style="font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#8d8a86">Prezime</span>
+                <input value="{{ lastName }}" onChange="{{ onLastName }}" placeholder="Npr. Marković" style="padding:14px 16px;background:#141416;border:1px solid rgba(255,255,255,.14);border-radius:2px;color:#eceae7;font-family:Barlow,sans-serif;font-size:15.5px;outline:none" style-focus="border-color:#c9ccd0">
+              </label>
+              <label style="display:flex;flex-direction:column;gap:7px">
+                <span style="font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#8d8a86">Broj telefona</span>
+                <input value="{{ phone }}" onChange="{{ onPhone }}" placeholder="06x xxx xxxx" style="padding:14px 16px;background:#141416;border:1px solid rgba(255,255,255,.14);border-radius:2px;color:#eceae7;font-family:Barlow,sans-serif;font-size:15.5px;outline:none" style-focus="border-color:#c9ccd0">
+              </label>
+              <div style="font-size:12.5px;color:{{ errorColor }}">{{ formNote }}</div>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ isStep4 }}" hint-placeholder-val="{{ false }}">
+          <div style="animation:briFade .35s ease both">
+            <div style="font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489;margin-bottom:18px">{{ step4Label }}</div>
+            <div style="display:flex;flex-direction:column;gap:0;border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden">
+              <sc-for list="{{ chosen }}" as="c" hint-placeholder-count="2">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid rgba(255,255,255,.07);background:#121214">
+                  <span style="font-size:15px">{{ c.name }}</span>
+                  <span style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.04em;color:#c9ccd0">{{ c.priceFmt }} RSD</span>
+                </div>
+              </sc-for>
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:18px;background:#e9e7e4;color:#0a0a0a">
+                <span style="font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:700">Ukupno</span>
+                <span style="font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:.03em">{{ totalFmt }} RSD</span>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:18px">
+              <div style="padding:16px 18px;border:1px solid rgba(255,255,255,.1);border-radius:3px">
+                <div style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#7f8489">Termin</div>
+                <div style="margin-top:7px;font-size:15.5px">{{ summaryWhen }}</div>
+              </div>
+              <div style="padding:16px 18px;border:1px solid rgba(255,255,255,.1);border-radius:3px">
+                <div style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#7f8489">Klijent</div>
+                <div style="margin-top:7px;font-size:15.5px">{{ summaryWho }}</div>
+              </div>
+              <div style="padding:16px 18px;border:1px solid rgba(255,255,255,.1);border-radius:3px">
+                <div style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#7f8489">Trajanje</div>
+                <div style="margin-top:7px;font-size:15.5px">{{ summaryDuration }}</div>
+              </div>
+            </div>
+            <sc-if value="{{ confirmed }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:20px;padding:20px;border:1px solid rgba(201,204,208,.35);background:rgba(201,204,208,.07);border-radius:3px">
+                <div style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.06em">Rezervacija potvrđena</div>
+                <div style="margin-top:8px;font-size:14.5px;line-height:1.6;color:#a8a5a1">Vidimo se u Radničkoj 60. Za izmenu termina pozovi <a href="tel:063462270" style="color:#fff;border-bottom:1px solid rgba(255,255,255,.4)">063 462 270</a>.</div>
+              </div>
+            </sc-if>
+          </div>
+        </sc-if>
+      </div>
+
+      <div style="padding:20px 28px;border-top:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:#0b0b0c">
+        <div style="display:flex;align-items:baseline;gap:9px">
+          <span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#7f8489">Ukupno</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.03em">{{ totalFmt }}</span>
+          <span style="font-size:11px;letter-spacing:.18em;color:#7f8489">RSD</span>
+        </div>
+        <div style="display:flex;gap:10px">
+          <div onClick="{{ back }}" style="cursor:pointer;padding:14px 24px;border:1px solid rgba(255,255,255,.18);border-radius:2px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#c9ccd0;display:{{ backDisplay }}" style-hover="border-color:#e9e7e4;background:rgba(255,255,255,.05)">Nazad</div>
+          <div onClick="{{ next }}" style="cursor:pointer;padding:14px 30px;background:{{ nextBg }};color:#0a0a0a;border-radius:2px;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:{{ nextOpacity }};transition:opacity .2s ease">{{ nextLabel }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding:88px 24px 40px;max-width:1120px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08)">
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(34px,5vw,54px);margin:0 0 38px;letter-spacing:.06em">Kontakt i lokacija</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:3px;background:#101012">
+          <div style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489">Adresa</div>
+          <div style="margin-top:9px;font-size:19px;line-height:1.45">Radnička 60<br>Veliki Crljeni 11563</div>
+        </div>
+        <a href="tel:063462270" style="display:block;padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:3px;background:#101012" style-hover="border-color:#e9e7e4;background:#16161a">
+          <div style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489">Telefon — pozovi direktno</div>
+          <div style="margin-top:9px;font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:.05em">063 462 270</div>
+        </a>
+        <a href="https://instagram.com/fs_brica___official" target="_blank" rel="noopener" style="display:block;padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:3px;background:#101012" style-hover="border-color:#e9e7e4;background:#16161a">
+          <div style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489">Instagram</div>
+          <div style="margin-top:9px;font-size:21px;letter-spacing:.02em">@fs_brica___official</div>
+        </a>
+        <div style="padding:22px;border:1px solid rgba(255,255,255,.1);border-radius:3px;background:#101012">
+          <div style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#7f8489">Radno vreme</div>
+          <div style="margin-top:11px;display:flex;flex-direction:column;gap:7px;font-size:15px;color:#b6b3af">
+            <div style="display:flex;justify-content:space-between"><span>Ponedeljak — Subota</span><span style="color:#fff">09:00 — 20:00</span></div>
+            <div style="display:flex;justify-content:space-between"><span>Nedelja</span><span style="color:#7f8489">Zatvoreno</span></div>
+          </div>
+        </div>
+      </div>
+      <div style="min-height:420px;border:1px solid rgba(255,255,255,.1);border-radius:3px;overflow:hidden;position:relative;background:#101012">
+        <sc-if value="{{ showMap }}" hint-placeholder-val="{{ true }}">
+          <iframe src="https://maps.google.com/maps?q=Radni%C4%8Dka%2060%2C%20Veliki%20Crljeni&z=15&output=embed" style="width:100%;height:100%;min-height:420px;border:0;filter:grayscale(1) invert(.9) contrast(.9)" loading="lazy" title="Lokacija salona"></iframe>
+        </sc-if>
+        <a href="https://maps.google.com/maps?q=Radni%C4%8Dka+60,+Veliki+Crljeni" target="_blank" rel="noopener" style="position:absolute;left:14px;bottom:14px;padding:11px 18px;background:#e9e7e4;color:#0a0a0a;font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-radius:2px" style-hover="background:#fff">Otvori u mapama</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding:34px 24px 44px;text-align:center;border-top:1px solid rgba(255,255,255,.08);margin-top:60px">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:.22em;color:#8d9298">BARBER SHOP BRICA</div>
+    <div style="margin-top:8px;font-size:12.5px;color:#6d7278">Vasić Nenad · Radnička 60, Veliki Crljeni 11563 · 063 462 270</div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroTagline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Klasično šišanje i brijanje kod Nenada. Bez čekanja — izaberi uslugu, datum i vreme, i termin je tvoj.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;slotIntervalMinutes&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:30,&quot;min&quot;:15,&quot;max&quot;:60,&quot;step&quot;:15,&quot;unit&quot;:&quot;min&quot;,&quot;tsType&quot;:&quot;number&quot;},&quot;showMap&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const SERVICES = [
+  { id: "sisanje", name: "Šišanje", price: 1200, tag: "Klasik", desc: "Mašinica i makaze, oblikovanje po želji.", mins: 30 },
+  { id: "brijanje", name: "Brijanje", price: 500, tag: "Britva", desc: "Topli obloge i klasična britva.", mins: 20 },
+  { id: "pranje", name: "Pranje kose", price: 300, tag: "Nega", desc: "Pranje, masaža glave i sušenje.", mins: 10 },
+  { id: "nos", name: "Čupanje dlaka iz nosa", price: 300, tag: "Detalji", desc: "Brzo, precizno i bezbolno koliko može.", mins: 10 },
+  { id: "komplet", name: "Komplet tretman", price: 2000, tag: "Preporuka", desc: "Šišanje + brijanje + pranje + dlake iz nosa.", mins: 70 }
+];
+const DOW = ["Ned", "Pon", "Uto", "Sre", "Čet", "Pet", "Sub"];
+const MON = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "avg", "sep", "okt", "nov", "dec"];
+const SILVER = "#c9ccd0", LIGHT = "#e9e7e4";
+
+class Component extends DCLogic {
+  state = { step: 1, sel: [], dateKey: null, time: null, firstName: "", lastName: "", phone: "", confirmed: false, touched: false };
+
+  days() {
+    const out = [], base = new Date();
+    for (let i = 0; i < 14; i++) {
+      const d = new Date(base.getFullYear(), base.getMonth(), base.getDate() + i);
+      out.push({ key: d.toISOString().slice(0, 10), d, closed: d.getDay() === 0 });
+    }
+    return out;
+  }
+
+  slotList(dayKey) {
+    const step = this.props.slotIntervalMinutes ?? 30;
+    const out = [];
+    let m = 9 * 60;
+    const seed = (dayKey || "").split("-").join("") | 0;
+    let i = 0;
+    while (m + step <= 20 * 60) {
+      const label = String(Math.floor(m / 60)).padStart(2, "0") + ":" + String(m % 60).padStart(2, "0");
+      out.push({ label, taken: (seed + i * 7) % 5 === 0 });
+      m += step; i++;
+    }
+    return out;
+  }
+
+  toggle(id) {
+    this.setState(s => {
+      let sel = s.sel.includes(id) ? s.sel.filter(x => x !== id) : [...s.sel, id];
+      if (id === "komplet" && sel.includes("komplet")) sel = ["komplet"];
+      else if (sel.length > 1) sel = sel.filter(x => x !== "komplet");
+      return { sel, confirmed: false };
+    });
+  }
+
+  chosen() { return SERVICES.filter(s => this.state.sel.includes(s.id)); }
+  total() { return this.chosen().reduce((a, b) => a + b.price, 0); }
+  fmt(n) { return n.toLocaleString("sr-RS"); }
+  phoneOk() { return this.state.phone.replace(/\D/g, "").length >= 9; }
+  valid3() { return this.state.firstName.trim() && this.state.lastName.trim() && this.phoneOk(); }
+
+  canNext() {
+    const s = this.state;
+    if (s.step === 1) return s.sel.length > 0;
+    if (s.step === 2) return !!s.dateKey && !!s.time;
+    if (s.step === 3) return !!this.valid3();
+    return !s.confirmed;
+  }
+
+  next = () => {
+    if (!this.canNext()) { this.setState({ touched: true }); return; }
+    if (this.state.step === 4) { this.setState({ confirmed: true }); return; }
+    this.setState(s => ({ step: s.step + 1, touched: false }));
+  };
+  back = () => this.setState(s => ({ step: Math.max(1, s.step - 1), confirmed: false }));
+
+  renderVals() {
+    const st = this.state, days = this.days();
+    const dayKey = st.dateKey || (days.find(d => !d.closed) || days[0]).key;
+    const selDay = days.find(d => d.key === dayKey);
+    const slots = this.slotList(dayKey);
+    const chosen = this.chosen();
+    const mins = chosen.reduce((a, b) => a + b.mins, 0);
+    const dayLabel = selDay ? DOW[selDay.d.getDay()] + " " + selDay.d.getDate() + ". " + MON[selDay.d.getMonth()] : "";
+
+    return {
+      heroTagline: this.props.heroTagline ?? "Klasično šišanje i brijanje kod Nenada. Bez čekanja — izaberi uslugu, datum i vreme, i termin je tvoj.",
+      showMap: this.props.showMap ?? true,
+      services: SERVICES.map(s => {
+        const on = st.sel.includes(s.id);
+        return {
+          ...s, priceFmt: this.fmt(s.price),
+          barWidth: on ? "100%" : "0%",
+          dot: on ? "✓" : "",
+          dotBg: on ? LIGHT : "transparent",
+          rowBg: on ? "rgba(233,231,228,.08)" : "#121214",
+          toggle: () => this.toggle(s.id)
+        };
+      }),
+      stepDots: [1, 2, 3, 4].map(n => ({
+        n, bg: st.step >= n ? LIGHT : "transparent", fg: st.step >= n ? "#0a0a0a" : "#7f8489",
+        lineDisplay: n === 4 ? "none" : "block"
+      })),
+      isStep1: st.step === 1, isStep2: st.step === 2, isStep3: st.step === 3, isStep4: st.step === 4,
+      days: days.map(d => {
+        const on = d.key === dayKey && !!st.dateKey;
+        return {
+          dow: DOW[d.d.getDay()], day: d.d.getDate(), mon: MON[d.d.getMonth()],
+          border: on ? LIGHT : "rgba(255,255,255,.12)",
+          bg: on ? LIGHT : "#121214", fg: on ? "#0a0a0a" : "#c9ccd0",
+          opacity: d.closed ? .32 : 1, cursor: d.closed ? "not-allowed" : "pointer",
+          pick: d.closed ? () => {} : () => this.setState({ dateKey: d.key, time: null })
+        };
+      }),
+      selectedDayLabel: dayLabel,
+      slots: slots.map(t => {
+        const on = st.time === t.label && st.dateKey === dayKey;
+        return {
+          label: t.label, strike: t.taken ? "line-through" : "none",
+          cursor: t.taken ? "not-allowed" : "pointer",
+          border: on ? LIGHT : "rgba(255,255,255,.12)",
+          bg: on ? LIGHT : t.taken ? "#0e0e0f" : "#141416",
+          fg: on ? "#0a0a0a" : t.taken ? "#4e5257" : "#dedbd7",
+          pick: t.taken ? () => {} : () => this.setState({ dateKey: dayKey, time: t.label })
+        };
+      }),
+      slotsNote: "Precrtani termini su zauzeti. Nedeljom je salon zatvoren.",
+      firstName: st.firstName, lastName: st.lastName, phone: st.phone,
+      onFirstName: e => this.setState({ firstName: e.target.value }),
+      onLastName: e => this.setState({ lastName: e.target.value }),
+      onPhone: e => this.setState({ phone: e.target.value }),
+      formNote: st.touched && !this.valid3() ? "Popuni ime, prezime i validan broj telefona." : "Podatke koristimo samo za potvrdu termina.",
+      errorColor: st.touched && !this.valid3() ? "#e28b7d" : "#7f8489",
+      chosen: chosen.map(c => ({ name: c.name, priceFmt: this.fmt(c.price) })),
+      totalFmt: this.fmt(this.total()),
+      step4Label: st.confirmed ? "Termin je zabeležen" : "Korak 4 — Potvrda rezervacije",
+      confirmed: st.confirmed,
+      summaryWhen: st.time ? dayLabel + " u " + st.time : "—",
+      summaryWho: (st.firstName + " " + st.lastName).trim() + (st.phone ? " · " + st.phone : ""),
+      summaryDuration: mins ? "≈ " + mins + " min" : "—",
+      next: this.next, back: this.back,
+      nextLabel: st.step === 4 ? (st.confirmed ? "Potvrđeno ✓" : "Potvrdi rezervaciju") : "Nastavi",
+      nextBg: this.canNext() ? LIGHT : SILVER,
+      nextOpacity: this.canNext() ? 1 : .38,
+      backDisplay: st.step === 1 ? "none" : "block"
+    };
+  }
+}
+
+</script>
+</body>
+</html>
